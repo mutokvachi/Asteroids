@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asteroids</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body id="body">
+	<div class="scoreboard">
+		<canvas id="asteroid" class='asteroid' width="40" height="40"></canvas>
+		<div>0</div>
+	</div>
+	<div class="round">Round <span>1</span></div>
+	<div class="game_over">
+		<h1>Game Over</h1>
+		<p>Your Score: <span>25</span></p>
+		<div class="play_again">Play Again</div>
+	</div>
+	<div class="bg">
+		<div class="shooter">
+			<div class="bullet_controller">
+				<canvas id="shooter" width="130" height="130"></canvas>
+			</div>
+			<div class="bullets"></div>
+		</div>
+	</div>
+		<canvas id="star"  class='asteroid' width="80" height="80" style="display: none;"></canvas>
+
+	<div class="start_playing">
+		<div class="playing">
+			<h1>Asteroids</h1>
+			<div id="play">Start Game</div>
+			<div id="instructions">Instructions</div>
+			<div>Credits</div>
+		</div>
+		<div class="info">
+			<img src="img/mouse.png" style="width: 40px; height: 40px;"><span> - Left click to shoot</span>
+			<br>
+			<p>4 Bullets :</p>
+			<img src="img/rocket.png"><span> - 3 Ordinary Bullet</span>
+			<br><br>
+			<img src="img/golden.png"><span> - 1 Golden Bullet</span>
+			<br><br>
+			<div id="back">Back</div>
+		</div>
+	</div>
+
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
