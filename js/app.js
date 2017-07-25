@@ -16,24 +16,6 @@ ctx.moveTo(65, 30);
 ctx.lineTo(65, 0);
 ctx.stroke();
 
-var star = document.getElementById('star');
-var ctx = star.getContext('2d');
-
-ctx.beginPath();
-ctx.strokeStyle = '#0000FF';
-ctx.fillStyle = '#87CEEB';
-ctx.lineWidth = 2;
-ctx.moveTo(30, 30);
-ctx.lineTo(40, 0);
-ctx.lineTo(50, 30);
-ctx.lineTo(80, 40);
-ctx.lineTo(50, 50);
-ctx.lineTo(40, 80);
-ctx.lineTo(30, 50);
-ctx.lineTo(0, 40);
-ctx.lineTo(30, 30);
-ctx.fill();
-ctx.stroke();
 
 function canvasAsteroid(id){
 	var asteroid = document.getElementById(id);
@@ -127,7 +109,6 @@ function largeAsteroid(id){
 	ctx.closePath();
 }
 
-
 var starRotateDeg = 0;
 var asteroidRotateDeg = 0;
 
@@ -139,7 +120,7 @@ function rotator(){
 		asteroidRotateDeg = 0;
 	}
 }
-rotator();
+
 setInterval(rotator, 50);
 
 var shooter = $('#shooter');
@@ -181,7 +162,7 @@ var shoot4Interval = null;
 function addBullet(){
 	$(document).mousedown(function(){
 		if($('.bullets div').length == 0 && start == true){
-			$('.bullets').append('<div class="bullet"><img src="img/rocket.png"></div>');
+			$('.bullets').append('<div class="bullet"></div>');
 		
 			var radians = Math.PI * bulletDegree / 180;
 			bulletDegree = degree+90;
@@ -189,7 +170,7 @@ function addBullet(){
 			bulletShoot();
 			shootInterval = setInterval(bulletShoot, 15);
 		}else if($('.bullet3').length == 1 && $('.bullet4').length == 0){
-			$('.bullets').append('<div class="bullet4"><img src="img/golden.png"></div>');
+			$('.bullets').append('<div class="bullet4"></div>');
 		
 			var radians = Math.PI * bulletDegree4 / 180;
 			bulletDegree4 = degree+90;
@@ -198,7 +179,7 @@ function addBullet(){
 			shoot4Interval = setInterval(bulletShoot4, 15);
 		}
 		else if($('.bullet2').length == 1 && $('.bullet4').length == 0){
-			$('.bullets').append('<div class="bullet3"><img src="img/rocket.png"></div>');
+			$('.bullets').append('<div class="bullet3"></div>');
 		
 			var radians = Math.PI * bulletDegree3 / 180;
 			bulletDegree3 = degree+90;
@@ -206,7 +187,7 @@ function addBullet(){
 			bulletShoot3();
 			shoot3Interval = setInterval(bulletShoot3, 15);
 		}else if($('.bullet').length == 1 && $('.bullet3').length == 0 && $('.bullet4').length == 0 ){
-			$('.bullets').append('<div class="bullet2"><img src="img/rocket.png"></div>');
+			$('.bullets').append('<div class="bullet2"></div>');
 		
 			var radians = Math.PI * bulletDegree2 / 180;
 			bulletDegree2 = degree+90;
@@ -386,8 +367,6 @@ function asteroidMovement(){
 			if(asteroidOffset.left > shooterOffset.left && asteroidOffset.left < shooterOffset.left+100 && asteroidOffset.top+asteroid.height() > shooterOffset.top+30 && asteroidOffset.top < shooterOffset.top+90){
 				stop = true;
 				playAgain();
-
-				console.log('play again');
 			}
 		}
 	}

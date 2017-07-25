@@ -204,3 +204,15 @@ html, body {
 .info p{
 	text-align: center;
 }
+.bullet{
+	background: lightblue;
+}
+.bullet2{
+	background: lightblue;
+}
+.bullet3{
+	background: lightblue;
+}
+.bullet4{
+	background: gold;
+}
